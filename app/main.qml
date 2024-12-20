@@ -4,7 +4,7 @@ import MyWonderfulPlugin 1.0
 Rectangle {
     width: 360
     height: 360
-    PippoItem {
+    MyWonderfulItem {
         anchors.centerIn: parent
     }
 }
