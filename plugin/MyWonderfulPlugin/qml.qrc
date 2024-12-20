@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>MyWonderfulItem.qml</file>
+    </qresource>
+</RCC>
