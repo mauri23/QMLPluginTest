@@ -17,6 +17,7 @@ The project build is currently being performed with the following environment:
 - Qt 6.8.1
 - Android NDK 26.1.10909125
 - Kit "Android Qt 6.8.1 Clang arm64-v8a" (debug)
+- Windows 10 host
 
 The build generates the following apk:
 - <OUT_DIR>/app/android-build/build/outputs/apk/debug/android-build-debug.apk
