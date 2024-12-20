@@ -1,7 +1,7 @@
 #include <QQmlEngine>
 #include <QQmlExtensionPlugin>
 
-class PippoPlugin : public QQmlExtensionPlugin {
+class MyWonderfulPlugin : public QQmlExtensionPlugin {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID QQmlExtensionInterface_iid)
 
