@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
-SUBDIRS += app plugin/MyWonderfulPlugin
+SUBDIRS += app plugins/MyWonderfulPlugin
 
 # Aggiungi la dipendenza tra app e plugin
-app.depends = plugin/MyWonderfulPlugin
+app.depends = plugins/MyWonderfulPlugin

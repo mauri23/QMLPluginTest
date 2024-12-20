@@ -10,3 +10,6 @@ public:
         qmlRegisterType(QUrl("qrc:/MyWonderfulItem.qml"), uri, 1, 0, "MyWonderfulItem");
     }
 };
+
+
+#include "MyWonderfulPlugin.moc"
