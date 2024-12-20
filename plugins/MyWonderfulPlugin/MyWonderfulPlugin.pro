@@ -12,7 +12,7 @@ android: {
 
 win32: {
     CONFIG(debug, debug|release):DESTDIR = $$top_builddir/app/debug/$$QML_IMPORT_NAME
-    CONFIG(release, debug|release):DESTDIR = $$top_builddir/app/debug/$$QML_IMPORT_NAME
+    CONFIG(release, debug|release):DESTDIR = $$top_builddir/app/release/$$QML_IMPORT_NAME
     TARGET = $$QML_IMPORT_NAME
 }
 
