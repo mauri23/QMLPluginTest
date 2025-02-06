@@ -13,13 +13,13 @@ QSGNode *MyWonderfulComponent::updatePaintNode(QSGNode *oldNode, UpdatePaintNode
 
     if (!oldNode) {
         node = new QSGGeometryNode;
-        geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(), 100);
-        geometry->setDrawingMode(GL_TRIANGLE_FAN);
+        geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(), 3 * 100); // 3 vertices per triangle
+        geometry->setDrawingMode(QSGGeometry::DrawTriangles);
         node->setGeometry(geometry);
         node->setFlag(QSGNode::OwnsGeometry);
 
         QSGFlatColorMaterial *material = new QSGFlatColorMaterial;
-        material->setColor(QColor(255, 0, 0));
+        material->setColor(QColor(0, 255, 0));
         node->setMaterial(material);
         node->setFlag(QSGNode::OwnsMaterial);
     } else {
@@ -28,15 +28,17 @@ QSGNode *MyWonderfulComponent::updatePaintNode(QSGNode *oldNode, UpdatePaintNode
     }
 
     QSGGeometry::Point2D *vertices = geometry->vertexDataAsPoint2D();
-    int count = geometry->vertexCount();
+    int count = geometry->vertexCount() / 3; // 3 vertices per triangle
     float radius = qMin(width(), height()) / 2;
     float centerX = width() / 2;
     float centerY = height() / 2;
 
-    vertices[0].set(centerX, centerY);
-    for (int i = 1; i < count; ++i) {
-        float angle = (i - 1) * 2 * M_PI / (count - 1);
-        vertices[i].set(centerX + radius * cos(angle), centerY + radius * sin(angle));
+    for (int i = 0; i < count; ++i) {
+        float angle1 = i * 2 * M_PI / count;
+        float angle2 = (i + 1) * 2 * M_PI / count;
+        vertices[3 * i].set(centerX, centerY);
+        vertices[3 * i + 1].set(centerX + radius * cos(angle1), centerY + radius * sin(angle1));
+        vertices[3 * i + 2].set(centerX + radius * cos(angle2), centerY + radius * sin(angle2));
     }
 
     node->markDirty(QSGNode::DirtyGeometry);
