@@ -21,8 +21,10 @@ win32: {
 
 uri = MyWonderfulPlugin
 
-SOURCES += MyWonderfulPlugin.cpp
-HEADERS +=
+SOURCES += MyWonderfulPlugin.cpp \
+    MyWonderfulComponent.cpp
+HEADERS += \
+    MyWonderfulComponent.h
 
 
 win32: {

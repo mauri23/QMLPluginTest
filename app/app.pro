@@ -10,5 +10,5 @@ QML_IMPORT_PATH += $$top_builddir/plugins/
 
 
 android: {
-    ANDROID_EXTRA_PLUGINS += $$top_builddir/plugins/
+    ANDROID_EXTRA_LIBS += $$top_builddir/plugins/MyWonderfulPlugin/libplugins_MyWonderfulPlugin_MyWonderfulPlugin_arm64-v8a.so
 }
